@@ -2,9 +2,11 @@ import logo from './logo.svg';
 import React from "react";
 import ReactDOM from "react-dom/client";
 import './App.css';
+import Expenses from './component/Expenses/Expenses';
 
-import {ExpenseItem, expenseItem} from "./component/ExpenseItem"
-function App() {
+import {ExpenseItem, expenseItem} from "./component/Expenses/ExpenseItem";
+
+const App = () => {
 
  const expenses = [
         {
@@ -27,16 +29,24 @@ function App() {
             date: new Date(2021, 5, 12),
         },
     ];
-  return (
-      <div>
-          <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} date={expenses[0].date}></ExpenseItem>
-          <ExpenseItem title={expenses[1].title} amount={expenses[1].amount} date={expenses[1].date}></ExpenseItem>
-          <ExpenseItem title={expenses[2].title} amount={expenses[2].amount} date={expenses[2].date}></ExpenseItem>
-          <ExpenseItem title={expenses[3].title} amount={expenses[3].amount} date={expenses[3].date}></ExpenseItem>
+// return React.createElement(
+//     'div',{},
+//     React.createElement('h2',{},"Expeses App"),
+//     React.createElement(Expenses, {items:expenses})
+// )
+    return (<div>
+        <Expenses items={expenses}/>
+    </div>)
 
-      </div>
+      // <div>
+      //     <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} date={expenses[0].date}></ExpenseItem>
+      //     <ExpenseItem title={expenses[1].title} amount={expenses[1].amount} date={expenses[1].date}></ExpenseItem>
+      //     <ExpenseItem title={expenses[2].title} amount={expenses[2].amount} date={expenses[2].date}></ExpenseItem>
+      //     <ExpenseItem title={expenses[3].title} amount={expenses[3].amount} date={expenses[3].date}></ExpenseItem>
+      //
+      // </div>
 
-  );
+
 }
 
 
@@ -46,10 +56,10 @@ function App() {
 //     }
 // }
 
-function  Welcome(props){
-    return <h1>Hello , {props.name}</h1>
-}
-const root = ReactDOM.createRoot(document.getElementById('root'));
-const  element = < Welcome name='RXA'/>;
-root.render(element)
+// function  Welcome(props){
+//     return <h1>Hello , {props.name}</h1>
+// }
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// const  element = < Welcome name='RXA'/>;
+// root.render(undefined)
 export default App;
