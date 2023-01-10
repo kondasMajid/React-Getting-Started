@@ -17,6 +17,13 @@
     flex: 1;
 }
 
+button {
+    background-color:crimson;
+    color: #ececec;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 4px;
+}
 .expense-item h2 {
     color: #3a3a3a;
     font-size: 1rem;
